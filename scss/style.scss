@@ -1,137 +1,146 @@
+$dark: #4c2432;
+$magenta: #a9218e;
+
+@mixin bp($point) {
+
+    $bp-babybear: "(max-width: 600px)";
+    $bp-mamabear: "(max-width: 1280px)";
+    $bp-papabear: "(max-width: 1600px)";
+
+    @if $point == papa-bear {
+        @media #{$bp-papabear} { @content; }
+    }
+    @else if $point == mama-bear {
+        @media #{$bp-mamabear} { @content; }
+    }
+    @else if $point == baby-bear {
+        @media #{$bp-babybear}  { @content; }
+    }
+
+}
+
+
 body {
-	font-family: Arial, Sans-serif;
-	margin: 0;
-	padding: 0;
-	font-size: 17px;
-	background: #4c2432;
+    font-family: Arial, Sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    background: $dark;
+    color: #fff;
+}
+#main {
+    background-color: #fff;
+    color: $dark;
+    padding-top: 20px;
 }
 
 .container {
-	width: 900px;
+    max-width: 900px;
 }
 
 .stripe {
-	height: 10px;
-	background: #a9218e;
-
+    height: 10px;
+    background: $magenta;
 }
 
+.header {
+    background: $dark;
+    margin-bottom: 20px;
+}
 
-.banner {
-	background: #4c2432;
+.caption {
+    background-color: $dark;
+    li {
+        color: #fff;
+        &:after {
+            content: '\25CF';
+            display: inline-block;
+            margin-left: 10px;
+            color: $magenta;
+        }
+        &:last-child:after {
+            content: '';
+        }
+    }
+}
+
+.list-inline {
+    margin: 0;
+    padding: 3px 0 3px 10px;
+    font-size: 14px;
 }
 
 #logo {
-	width: 840px;
-	margin: 0 auto;
-	padding: 15px 0;
-	h1 {
-		margin: 0 15px;
-		padding: 0;
-		text-indent: -9999px;
-		background: url('/images/logo.png') no-repeat left top;
-		height: 65px;
-	}
+    margin: 0 auto;
+    padding: 15px 0;
+    h1 {
+        margin: 0 10px;
+        padding: 0;
+        text-indent: -9999px;
+        background: url('/images/logo.png') no-repeat left top;
+        height: 65px;
+    }
 }
 
-#contact {
-	background: #a9218e;
-	text-align: left;
-	padding: 10px 20px 5px;
-	border-radius: 0 0 10px 10px;
-	p {
-		color: #f1e5ee;
-		font-size: 12px;
-		line-height: 1.5;
-		a {
-			text-decoration: none;
-			color: inherit;
-		}
-	}
+.pinkbox {
+    background: $magenta;
+    text-align: left;
+    padding: 10px 20px 5px;
+    border-radius: 0 0 10px 10px;
+    @include bp(baby-bear) {
+        border-radius: 0;
+    }
+    p {
+        color: #f1e5ee;
+        font-size: 12px;
+        line-height: 1.5;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
 }
-
 
 .main {
-	float: left;
-	clear: left;
+    line-height: 28px;
+    font-size: 17px;
+    padding: 20px;
+    span {
+        font-size: 24px;
+        color: #a9218e;
+    }
 }
-.side {
-	float: right;
-	clear: right;
-}
-.clear {
-	clear: both;
-}
+.sidebar {
+    padding: 0 0 20px;
+    margin-bottom: 20px;
+    li {
+        font-size: 13px;
+    }
+    @include bp(baby-bear) {
+        padding: 0 20px;
+        li {
+        font-size: 17px;
 
-
-
-
-#page {
-	background: #fff;
-	color: #4c2432;
-}
-#content {
-	width: 840px;
-	margin: 0 auto;
-	padding: 4px 0;
-}
-
-#gallery div {
-	background: #4c2432;
-	color: #fff;
-}
-#gallery p {
-	margin: 0;
-	font-size: 14px;
-	margin: 4px 15px;
-	padding: 0 0 0 10px;
-}
-#gallery p.dot {
-	background: url('/images/dot.png') no-repeat 0px 7px;
-}
-#gallery p img {
-	padding: 0 0 3px;
-}
-
-#copy {
-	clear: both;
-	padding: 45px 0 25px;
-}
-#copy p.main {
-	line-height: 28px;
-	width: 530px;
-	margin: 0 0 50px 0;
-	padding: 0 25px;
-	border-right: 2px dotted #a9218e;
-}
-#copy p.side {
-	background: url('/images/dot.png') no-repeat 0px 8px;
-	font-size: 13px;
-	line-height: 18px;
-	width: 205px;
-	margin: 0 0 15px;
-	padding: 0 25px 0 10px;
-}
-#copy p span {
-	font-size: 24px;
-	color: #a9218e;
+        }
+    }
 }
 
 #footer {
-	clear: both;
-	color: #fff;
-	font-size: 12px;
+    ul.list-inline {
+        padding-top: 20px;
+        color: #fff;
+        font-size: 12px;
+        margin: 0 auto;
+        list-style: none;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        li.sep {
+            color: $magenta;
+        }
+        a {
+            color: inherit;
+        }
+    }
+
 }
-#footer ul {
-	width: 790px;
-	margin: 0 auto;
-	list-style: none;
-	padding: 15px 0;
-}
-#footer ul li {
-	display: inline-block;
-}
-#footer ul li.sep {
-	color: #a9218e;
-	padding: 0 20px;
-}
+
