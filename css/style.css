@@ -8,31 +8,37 @@ body { font-family: Arial, Sans-serif; margin: 0; padding: 0; font-size: 17px; b
 
 .header { background: #4c2432; margin-bottom: 20px; }
 
-.caption { background-color: #4c2432; }
+.caption { background-color: #4c2432; font-size: 14px; }
 .caption li { color: #fff; }
 .caption li:after { content: '\25CF'; display: inline-block; margin-left: 10px; color: #a9218e; }
 .caption li:last-child:after { content: ''; }
+@media (max-width: 600px) { .caption { font-size: 12px; text-align: center; }
+  .caption li:nth-child(3):after { content: ''; } }
 
-.list-inline { margin: 0; padding: 3px 0 3px 10px; font-size: 14px; }
+.list-inline { margin: 0; padding: 3px 0 3px 10px; }
 
 #logo { margin: 0 auto; padding: 15px 0; }
 #logo h1 { margin: 0 10px; padding: 0; text-indent: -9999px; background: url("/images/logo.png") no-repeat left top; height: 65px; }
+@media (max-width: 600px) { #logo h1 { margin: 0; } }
 
 .pinkbox { background: #a9218e; text-align: left; padding: 10px 20px 5px; border-radius: 0 0 10px 10px; }
-@media (max-width: 600px) { .pinkbox { border-radius: 0; } }
 .pinkbox p { color: #f1e5ee; font-size: 12px; line-height: 1.5; }
 .pinkbox p a { text-decoration: none; color: inherit; }
+@media (max-width: 600px) { .pinkbox { border-radius: 0; }
+  .pinkbox p { font-size: 16px; } }
 
 .main { line-height: 28px; font-size: 17px; padding: 20px; }
 .main span { font-size: 24px; color: #a9218e; }
 
-.sidebar { padding: 0 0 20px; margin-bottom: 20px; }
+.sidebar { margin: 20px; border-left: 3px dotted #a9218e; margin-bottom: 20px; }
 .sidebar li { font-size: 13px; }
-@media (max-width: 600px) { .sidebar { padding: 0 20px; }
-  .sidebar li { font-size: 17px; } }
+@media (max-width: 600px) { .sidebar { margin-top: 0; border-left: 0; padding-left: 1em; padding-bottom: 20px; }
+  .sidebar li { font-size: 17px; margin-bottom: 20px; } }
 
 #footer ul.list-inline { padding-top: 20px; color: #fff; font-size: 12px; margin: 0 auto; list-style: none; line-height: 1.8; margin-bottom: 40px; }
 #footer ul.list-inline li.sep { color: #a9218e; }
 #footer ul.list-inline a { color: inherit; }
+@media (max-width: 600px) { #footer ul.list-inline { text-align: center; line-height: 2.5; }
+  #footer ul.list-inline li.sep { display: none; } }
 
 /*# sourceMappingURL=style.css.map */
