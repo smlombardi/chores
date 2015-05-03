@@ -1,22 +1,23 @@
 body { font-family: Arial, Sans-serif; margin: 0; padding: 0; font-size: 17px; background: #4c2432; }
 
-h1 { margin: 0 15px; padding: 0; text-indent: -9999px; background: url("/images/logo.png") no-repeat left top; height: 65px; }
+.container { width: 900px; }
+
+.stripe { height: 10px; background: #a9218e; }
+
+.banner { background: #4c2432; }
+
+#logo { width: 840px; margin: 0 auto; padding: 15px 0; }
+#logo h1 { margin: 0 15px; padding: 0; text-indent: -9999px; background: url("/images/logo.png") no-repeat left top; height: 65px; }
+
+#contact { background: #a9218e; text-align: left; padding: 10px 20px 5px; border-radius: 0 0 10px 10px; }
+#contact p { color: #f1e5ee; font-size: 12px; line-height: 1.5; }
+#contact p a { text-decoration: none; color: inherit; }
 
 .main { float: left; clear: left; }
 
 .side { float: right; clear: right; }
 
 .clear { clear: both; }
-
-#header { background: #a9218e; color: #fff; padding: 12px 0 0; }
-
-#banner { background: #4c2432; }
-
-#logo { width: 840px; margin: 0 auto; padding: 15px 0; }
-
-#contact { font-size: 12px; position: absolute; left: 50%; margin-left: 157px; top: 12px; width: 263px; background: #a9218e; border-radius: 0 0 10px 10px; }
-
-#contact p { color: #f1e5ee; margin: 16px 20px; }
 
 #page { background: #fff; color: #4c2432; }
 
